@@ -9,35 +9,32 @@
 </head>
 <body>
     <div id="app">
-        Valor Total: {{ valorTotal }}
-        Logado: {{ logado }}
+        {{ somar() }}
+        {{ subtrair() }}
+        {{ multiplicar() }}
     </div>
     <script> 
         const vm = new Vue({
             el: '#app',
             data: {
-                mensagem: 'Primeiro template controlado pelo Vue', //string
-                valorTotal: 150.47, //numero
-                logado: false, //boleano
-                hobbies: [
-                    'Dormir',
-                    'Colecionar',
-                    'Correr',
-                    'Trilhas'
-                ],
-                perfil: {
-                    nome: 'daniel',
-                    site: 'daniel.net.br',
-                    idade: 23,
-                    cursos: [
-                        {nome: 'Laravel', cargoHoraria: '50 horas'},
-                        {nome: 'vue', cargoHoraria: '25 horas'}
-                    ]
+                n1: 10,
+                n2: 5
+            },
+            methods: {
+                somar: function somar() { //convencional
+                    return 4 + 2;
+                },
+                subtrair: function() { //anonima
+                    return 4 -2;
+                },
+                multiplicar: ()=> {
+                    return 4 * 2;
+                },
+                dividir() {
+                    return 4 / 2;
                 }
-
             }
-        }
-        )
+        })
         
 
 
