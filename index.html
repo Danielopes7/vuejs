@@ -23,7 +23,7 @@
 <body>
     <div id="app">
         <input type="text" @keyup="imprimirTexto('Enviando parametro', 5, xyz)">
-        <button @click="mensagemAlerta()">Botão</button>
+        <button @click="mensagemAlerta($event)">Botão</button>
     </div>
     <script> 
         const vm = new Vue({
@@ -37,8 +37,8 @@
                     console.log(n)
                     console.log(this.xyz)
                 },
-                mensagemAlerta() {
-                    alert('Mensagem de alerta')
+                mensagemAlerta(evento) {
+                    console.log(evento)
                 }
             }
         })
